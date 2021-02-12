@@ -4,14 +4,6 @@ import {Alerta, WeatherCard} from '../style/global';
 
 // REACT_APP_OPEN_WEATHER_API_KEY=bb1f21f8f4a1d0d8c6caf10c728aaa4f
 
-function LocationCards(list) {
-  console.log(list);
-  for (var x in list){
-    console.log(x);
-  }
-  // console.log(list);
-  return;
-}
 
 const Location = () => {
   const [location, setLocation] = useState(false);
@@ -20,20 +12,21 @@ const Location = () => {
 
   const weatherData = async(lat, long) => {
     try {
-      const apiData = await axios.get("https://api.openweathermap.org/data/2.5/forecast", {
+      await axios.get("https://api.openweathermap.org/data/2.5/forecast", {
         params: {
           lat: lat,
           lon: long,
           appid: "bb1f21f8f4a1d0d8c6caf10c728aaa4f",
           lang: 'pt',
-          units: 'metric'
+          units: 'metric',
+          format: 'json'
         }
       }).then(res => {
-        var data = res.data;
-        setWeather(data);
-        LocationCards(data.list);
+        // var xxx = res.data.json();
+        setWeather(res.data);
       })
     } catch (error) {
+      console.error(error);
       if(error.response.status === 401){
         setError(error.response.statusText);
       }
@@ -59,10 +52,15 @@ const Location = () => {
         <h3>É necessário habilitar a localização no browser para obter dados da API.</h3>
       </Alerta>
     }      
-    { weather && 
-      <ul>
-        <li></li>
-      </ul>
+    { weather && weather.list.map(item => (
+      console.log(item),
+      <WeatherCard key={item.dt}>
+        <div className="temperature">{item.main.temp}</div>
+        <div className="temp-min">{item.main.temp_min}</div>
+        <div className="temp-max">{item.main.temp_max}</div>
+        {item.dt}
+      </WeatherCard>
+    ))
     }
     </>
   );

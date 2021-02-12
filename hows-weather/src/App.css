@@ -1,7 +1,13 @@
 body {
-  background-color: #282c34;
-  color: white;
-  padding: 40px;
-  font-family: Arial;
-  text-align: center;
+  box-sizing: border-box;
+  margin: 10px;
+  background-color: lightblue;
+  display: flex;
+}
+
+.main-component{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
