@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 
 const Alerta = styled.button`
   background-color: blue;
@@ -8,6 +8,7 @@ const Alerta = styled.button`
 
 const WeatherCard = styled.div`
   display: flex;
+  color: ${props => props.temp === "Rain" ? "red" : "yellow"}; 
   align-items: center;
   height: 30vh;
   width: 20vw;
@@ -16,7 +17,6 @@ const WeatherCard = styled.div`
   border-radius: 5px;
   background-color: white;
   flex-direction: column;
-  color: red;
 `;
 
 export {

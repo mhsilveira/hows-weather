@@ -1,8 +1,9 @@
 body {
   box-sizing: border-box;
   margin: 10px;
-  background-color: lightblue;
-  display: flex;
+  background-image: url('../src/assets/snowy.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .main-component {

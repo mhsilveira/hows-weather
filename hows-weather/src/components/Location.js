@@ -54,10 +54,13 @@ const Location = () => {
     }      
     { weather && weather.map(item => (
       console.log(item),
-      <WeatherCard key={item.dt}>
-        <div className="temperature">{item.main.temp}</div>
-        <div className="temp-min">{item.main.temp_min}</div>
-        <div className="temp-max">{item.main.temp_max}</div>
+      <WeatherCard key={item.dt} temp="Rain">
+        <div className="temperature">Temperatura{item.main.temp}</div>
+        <div className="temp-desc">{item.weather[0].description}</div>
+        <img src={`http://openweathermap.org/img/w/${item.weather[0].icon}.png`} alt="icone"/>
+        <div className="temperature">Clima: {item.weather[0].main}</div>
+        <div className="temp-min">Mínima de {item.main.temp_min}ºC</div>
+        <div className="temp-max">Máxima de {item.main.temp_max}ºC</div>
       </WeatherCard>
     ))
     }
