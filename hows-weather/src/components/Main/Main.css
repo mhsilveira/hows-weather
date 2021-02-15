@@ -1,0 +1,5 @@
+.weather-main{
+  display: flex;
+  height: 100vh;
+  width: 60vw;
+}

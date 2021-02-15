@@ -1,0 +1,4 @@
+# formatar cards
+# react loading usage
+# tratativa de erros
+# layout com side, nav e main pegando filtros com autocomplete -> primeiro faz um combo bem definido

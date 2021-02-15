@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {Alerta, WeatherCard} from '../style/global';
+import {Alerta, WeatherCard} from '../../style/global';
 // REACT_APP_OPEN_WEATHER_API_KEY=bb1f21f8f4a1d0d8c6caf10c728aaa4f
 
 const Location = () => {

@@ -1,0 +1,20 @@
+.weather-aside{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40vw;
+  background-color: white;
+}
+
+.weather-titulo{
+  font-family: 'Homemade Apple', cursive;
+  color: red;
+  font-size: xx-large;
+}
+
+.weather-filtros{
+  font-family: 'Tahoma', cursive;
+  display: flex;
+  flex-direction: column;
+}
