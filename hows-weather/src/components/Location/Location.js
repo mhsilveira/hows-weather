@@ -53,7 +53,6 @@ const Location = () => {
       </Alerta>
     }      
     { weather && weather.map(item => (
-      console.log(item),
       <WeatherCard key={item.dt} temp="Rain">
         <div className="temperature">Temperatura{item.main.temp}</div>
         <div className="temp-desc">{item.weather[0].description}</div>

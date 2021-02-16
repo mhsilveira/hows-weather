@@ -1,13 +1,16 @@
 body {
   box-sizing: border-box;
-  margin: 10px;
+  overflow-y: hidden;
   background-image: url('../src/assets/snowy.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 10 5 10 5;
 }
 
 .container {
   display: flex;
   flex-direction: row;
   flex: 1;
+  height: 95vh;
+  width: 95vw;  
 }

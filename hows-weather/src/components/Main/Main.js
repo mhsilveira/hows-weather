@@ -1,14 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import './Main.css';
 
-class Main extends Component {
-  render() {
-    return (
-      <>
-        <main className="weather-main">NEW  MAIN</main>
-      </>
-    );
+const Main = ({forecast}) => {
+  
+  let content;
+  if (!forecast) {
+    content = <h1>Preencha uma data ao lado para buscar a previsão...</h1>
+  } else {
+    content = <div>{forecast}</div>
   }
+
+  return (
+    <>
+    <main>
+      {content}
+    </main>
+    </>
+  );
+  
 }
 
 export default Main;

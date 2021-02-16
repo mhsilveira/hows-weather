@@ -5,6 +5,7 @@
   align-items: center;
   width: 40vw;
   background-color: white;
+  border-radius: 25px;
 }
 
 .weather-titulo{
