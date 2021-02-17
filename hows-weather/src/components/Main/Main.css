@@ -1,5 +1,27 @@
 .weather-main{
   display: flex;
-  height: 100vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   width: 60vw;
+  margin: 0 20;
+  opacity: 0.6;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.forecast_data_hora{
+
+}
+
+.forecast_lugar{
+
+}
+
+.forecast_temp{
+
+}
+
+.forecast_desc{
+  
 }

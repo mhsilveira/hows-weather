@@ -20,7 +20,7 @@ function getPosition(options) {
 
 const App = () => {
   const [dataIni, setDataIni]   = useState(new Date());
-  const [forecast, setForecast] = useState(false);
+  const [forecast, setForecast] = useState()
 
   async function weatherData (lat, long){
     try {
@@ -35,8 +35,7 @@ const App = () => {
         }
       }).then(res => {
         // colocar em um state o retorno correto dos dados? 
-        // setForecast(res);
-        console.log(res);
+        setForecast(res.data);
       })
     } catch (error) {
       Swal.fire({
@@ -76,7 +75,11 @@ const App = () => {
   return (
     <div className="container">
       <Aside setDataIni={setDataIni} getDataAPI={getDataAPI}/>
-      <Main forecast={forecast}/>
+      {
+        forecast && (
+          <Main forecast={forecast}/>
+        )
+      }
     </div>
   );
 }

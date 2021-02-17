@@ -8,7 +8,7 @@ const Alerta = styled.button`
 
 const WeatherCard = styled.div`
   display: flex;
-  color: ${props => props.temp === "Rain" ? "red" : "yellow"}; 
+  color: ${props => props.temp === "Rain" ? "red" : "blue"}; 
   align-items: center;
   height: 30vh;
   width: 20vw;
