@@ -2,6 +2,8 @@ import React from "react";
 import './Aside.css';
 import { Button } from '@material-ui/core';
 
+import SearchLocationInput from '../../SearchLocationInput';
+
 const Aside = ({setDataIni, getDataAPI}) => {
   return (
     <>
@@ -10,6 +12,7 @@ const Aside = ({setDataIni, getDataAPI}) => {
         <div className="weather-filtros">
           <strong>Selecione uma data para buscar a previsão do tempo: </strong>
           <input type="date" id="data_ini" defaultValue={new Date()} onChange={(e) => {setDataIni(e.target.value)}}  />
+          <SearchLocationInput/>
         </div>
         <Button variant="contained" color="primary" onClick={getDataAPI}>
           Buscar
