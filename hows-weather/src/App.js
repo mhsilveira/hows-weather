@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useEffect, useState} from "react";
 import Aside from "./components/Aside/Aside";
 import Main from "./components/Main/Main";
 import Swal from 'sweetalert2';
@@ -11,18 +11,21 @@ const options = {
   maximumAge: 0
 };
 
+/*
 function getPosition(options) {
   return new Promise((resolve, reject) => 
     navigator.geolocation.getCurrentPosition(resolve, reject, options)
   );
 }
+*/
 
 
 const App = () => {
-  const [dataIni, setDataIni]   = useState(new Date());
-  const [forecast, setForecast] = useState()
+  const [forecast, setForecast] = useState("");
+  const [address, setAddress] = useState("");
 
-  async function weatherData (lat, long){
+  
+  async function weatherData(lat, long){
     try {
       const URL_API = "https://api.openweathermap.org/data/2.5/weather";
       await axios.get(URL_API, {
@@ -48,12 +51,9 @@ const App = () => {
     }
   }
   
+  /*
   async function getDataAPI() {
-    let data_busca = document.getElementById("data_ini").value;
     try {
-      if(!data_busca){
-        throw new Error("Selecione uma data para efetuar a busca...");
-      }    
       await getPosition(options)
       .then((position) => {
         weatherData(position.coords.latitude, position.coords.longitude)
@@ -71,10 +71,11 @@ const App = () => {
       return false;
     }
   }
+  */
 
   return (
     <div className="container">
-      <Aside setDataIni={setDataIni} getDataAPI={getDataAPI}/>
+      <Aside address={address} setAddress={setAddress}/>
       {
         forecast && (
           <Main forecast={forecast}/>

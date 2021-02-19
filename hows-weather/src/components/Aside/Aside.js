@@ -1,25 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import './Aside.css';
 import { Button } from '@material-ui/core';
+import LocationInput from '../LocationInput/LocationInput';
 
-import SearchLocationInput from '../../SearchLocationInput';
-
-const Aside = ({setDataIni, getDataAPI}) => {
+const Aside = ({address, setAddress}) => {
+  
   return (
     <>
       <aside className="weather-aside">
         <div className="weather-titulo">How's Weather?</div>
         <div className="weather-filtros">
-          <strong>Selecione uma data para buscar a previsão do tempo: </strong>
-          <input type="date" id="data_ini" defaultValue={new Date()} onChange={(e) => {setDataIni(e.target.value)}}  />
-          <SearchLocationInput/>
+          <strong>Busque uma localidade para checar seu clima... </strong>
+          <LocationInput address={address} setAddress={setAddress}/>
         </div>
-        <Button variant="contained" color="primary" onClick={getDataAPI}>
+        <Button variant="contained" color="primary" onClick={() => alert(address)}>
           Buscar
         </Button>
       </aside>
     </>
-  );
+  )
   
 }
 
