@@ -8,7 +8,6 @@ const Main = ({forecast}) => {
   let content;
   // alert(typeof forecast);
   if (forecast) {
-    console.log(forecast);
     let jstimestamp = (forecast.dt * 1000);
     let result      = format(new Date(jstimestamp), 'dd/MM/yyyy k:m');
     let temp_atual  = forecast.main.temp;

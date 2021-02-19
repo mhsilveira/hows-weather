@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const Alerta = styled.button`
   background-color: blue;
@@ -7,6 +7,15 @@ const Alerta = styled.button`
 `;
 
 // color: ${props => props.temp === "Rain" ? "red" : "blue"}; 
+const smoothShow = keyframes`
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+`;
+
 const WeatherCard = styled.div`
   display: flex;
   align-items: center;
@@ -17,6 +26,7 @@ const WeatherCard = styled.div`
   border-radius: 5px;
   background-color: #343d4b;  
   flex-direction: column;
+  animation: ${smoothShow} .3s;
 `;
 
 export {
