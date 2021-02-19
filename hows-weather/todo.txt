@@ -2,3 +2,7 @@
 # react loading usage
 # tratativa de erros
 # layout com side, nav e main pegando filtros com autocomplete -> primeiro faz um combo bem definido
+# habilitar chave pra trabalhar com geocode
+# pegar o endereco por coordenadas para ser mais assertivo na pesquisa
+# melhorar layout
+# formatar campo input autocomplete

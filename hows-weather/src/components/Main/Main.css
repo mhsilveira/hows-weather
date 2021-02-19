@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
 .weather-main{
   display: flex;
   flex-direction: column;
@@ -5,21 +7,18 @@
   align-items: center;
   width: 60vw;
   margin: 0 20;
-  opacity: 0.6;
-  background-color: white;
+  opacity: 1;
   border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: large;
 }
 
-.forecast_data_hora{
-
-}
-
-.forecast_lugar{
-
-}
 
 .forecast_temp{
-
+  margin: 0;
+  font-weight: 700;
+  font-size: 4em;
 }
 
 .forecast_desc{

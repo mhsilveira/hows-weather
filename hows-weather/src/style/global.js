@@ -6,16 +6,16 @@ const Alerta = styled.button`
   font-weight: 700;
 `;
 
+// color: ${props => props.temp === "Rain" ? "red" : "blue"}; 
 const WeatherCard = styled.div`
   display: flex;
-  color: ${props => props.temp === "Rain" ? "red" : "blue"}; 
   align-items: center;
   height: 30vh;
   width: 20vw;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
-  background-color: white;
+  background-color: #343d4b;  
   flex-direction: column;
 `;
 
